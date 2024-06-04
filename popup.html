@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="popup.css">
+  <title>Item Listing</title>
+</head>
+<body>
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" id="title">
+  </div>
+  <div class="form-group">
+    <label for="price">Price</label>
+    <input type="number" id="price" style="width: 70%;">
+    <label for="quantity">Quantity</label>
+    <input type="number" id="quantity" style="width: 25%;">
+    <label for="mpn">MPN</label>
+    <input type="text" id="mpn" style="width: 25%;">
+  </div>
+  <!-- Separate Upload Area -->
+  <div class="upload-area">
+    <label for="imageInput" class="upload-header">Click here to select images</label>
+    <input type="file" id="imageInput" multiple accept="image/*" style="display:none;">
+  </div>
+  <!-- Thumbnail Display Area -->
+  <div id="thumbnailContainer"></div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea id="description"></textarea>
+  </div>
+  <div id="siteSelection">
+    <h3>Choose sites to post:</h3>
+    <div id="sites-container"></div> <!-- Container for dynamically created site cards -->
+</div>
+  <button type="button" id="post-button">Post!</button>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

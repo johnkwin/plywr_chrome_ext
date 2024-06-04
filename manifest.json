@@ -1,0 +1,36 @@
+{
+    "manifest_version": 3,
+    "name": "Multi-Site Listing Assistant",
+    "version": "1.0",
+    "permissions": [
+      "storage",
+      "activeTab",
+      "tabs",
+      "scripting"
+    ],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self' http://localhost:* http://127.0.0.1:*; object-src 'self'"
+      },
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "*://*.ebay.com/*",
+          "*://*.facebook.com/marketplace/*",
+          "*://*.mercari.com/*",
+          "*://*.grailed.com/*",
+          "*://*.offerup.com/*",
+          "*://*.craigslist.org/*",
+          "*://*.stockx.com/*",
+          "*://*.depop.com/*",
+          "*://*.poshmark.com/*"
+        ],
+        "js": ["content.js"]
+      }
+    ]
+  }
